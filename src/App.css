@@ -1,0 +1,300 @@
+body {
+	background: #1a1a2e;
+	color: #e0e0e0;
+}
+
+.app {
+	max-width: 600px;
+	margin: 2rem auto;
+	padding: 1rem;
+	font-family: sans-serif;
+}
+
+.nav-buttons {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1.5rem;
+}
+
+.back-btn,
+.forward-btn,
+.home-btn {
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: #646cff;
+	font-size: 1rem;
+	width: 2rem;
+	text-align: center;
+}
+
+.forward-btn:disabled,
+.back-btn:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.radio-groups {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.groups-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.groups-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.group-row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.row-action-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid #ff4444;
+	border-radius: 50%;
+	background: none;
+	color: #ff4444;
+	font-size: 1.2rem;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.row-action-btn:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.plus-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.55rem 1rem;
+	font-size: 1.5rem;
+	cursor: pointer;
+	border: 1px solid #646cff;
+	border-radius: 8px;
+	background: transparent;
+	color: #646cff;
+	transition: background 0.2s;
+}
+
+.plus-btn:hover:not(:disabled) {
+	background: #646cff;
+	color: #fff;
+}
+
+.plus-btn:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.radio-group {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.75rem 1rem;
+	border: 1px solid #444;
+	border-radius: 8px;
+}
+
+.radio-group.tested {
+	border-color: #646cff;
+	background: rgba(100, 108, 255, 0.1);
+}
+
+.phase-indicator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	background: rgba(100, 108, 255, 0.1);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.phase-indicator.hidden {
+	display: none;
+}
+
+.phase-indicator button {
+	background: none;
+	border: 1px solid #646cff;
+	color: #646cff;
+	border-radius: 4px;
+	padding: 0.25rem 0.5rem;
+	cursor: pointer;
+	flex-shrink: 0;
+	font-size: 0.9rem;
+}
+
+.phase-indicator button:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.disc-progress {
+	display: flex;
+	gap: 0.4rem;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.progress-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #444;
+	border: 1px solid #666;
+}
+
+.progress-dot.active {
+	background: #646cff;
+	border-color: #646cff;
+	box-shadow: 0 0 4px #646cff;
+}
+
+.progress-dot.done {
+	background: #4caf50;
+	border-color: #4caf50;
+}
+
+.options {
+	display: flex;
+	gap: 1rem;
+}
+
+.radio-label {
+	cursor: pointer;
+}
+
+.radio-label.edge input[type="radio"] {
+	outline: 2px solid #ff4444;
+	outline-offset: 2px;
+}
+
+.radio-label.center input[type="radio"] {
+	outline: 2px solid #e6c619;
+	outline-offset: 2px;
+	border-radius: 50%;
+}
+
+.radio-label.disabled {
+	opacity: 0.2;
+	pointer-events: none;
+}
+
+.radio-label.disabled input[type="radio"]:checked {
+	opacity: 1;
+	accent-color: #646cff;
+	appearance: auto;
+}
+
+.radio-label.disabled:has(input:checked) {
+	opacity: 1;
+}
+
+.radio-label input[type="radio"] {
+	width: 1.2rem;
+	height: 1.2rem;
+	cursor: pointer;
+}
+
+.radio-label input[type="radio"]:disabled {
+	cursor: not-allowed;
+}
+
+.debug-panel {
+	margin-top: 2rem;
+	padding: 1rem;
+	border: 1px dashed #555;
+	border-radius: 8px;
+	text-align: left;
+	font-size: 0.85rem;
+}
+
+.debug-panel pre {
+	background: #0d0d1a;
+	padding: 0.5rem;
+	border-radius: 4px;
+	overflow-x: auto;
+}
+
+.solve-plan {
+	display: flex;
+	align-items: center;
+	padding: 0.75rem 1rem;
+	border: 1px solid #4caf50;
+	border-radius: 8px;
+	background: rgba(76, 175, 80, 0.1);
+	min-height: 3rem;
+	box-sizing: border-box;
+}
+
+.solve-plan pre {
+	background: #0d0d1a;
+	padding: 0.5rem;
+	border-radius: 4px;
+	overflow-x: auto;
+	font-size: 0.85rem;
+}
+
+.progress-bar {
+	flex: 1;
+	height: 6px;
+	background: #333;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.progress-bar-fill {
+	height: 100%;
+	background: #646cff;
+	border-radius: 3px;
+	animation: indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes indeterminate {
+	0% {
+		width: 0%;
+		margin-left: 0%;
+	}
+	50% {
+		width: 40%;
+		margin-left: 30%;
+	}
+	100% {
+		width: 0%;
+		margin-left: 100%;
+	}
+}
+
+.progress-text {
+	font-size: 0.8rem;
+	color: #999;
+	margin: 0;
+}
+
+.solve-step-label {
+	font-size: 0.9rem;
+	color: #e0e0e0;
+	white-space: nowrap;
+}
