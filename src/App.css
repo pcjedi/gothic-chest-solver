@@ -1,11 +1,27 @@
 html,
 body {
-	background: #1a1a2e;
 	color: #e0e0e0;
 	min-height: 100%;
 	margin: 0;
 	width: 100%;
 	overflow-x: hidden;
+	transition: background 0.4s ease;
+	background: #121218;
+}
+
+/* Phase 1: Torchlit — warm amber glow */
+body.phase-1 {
+	background: #2e2518;
+}
+
+/* Phase 2: Cold stone chamber — bluish slate */
+body.phase-2 {
+	background: #1a1d2e;
+}
+
+/* Phase 3: Dungeon depths — mossy dark green */
+body.phase-3 {
+	background: #1a2e1f;
 }
 
 .app {

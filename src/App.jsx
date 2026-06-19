@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
 import SolverWorker from "./solverWorker.js?worker";
 
@@ -8,6 +8,10 @@ const showDebug =
 function App() {
 	const [count, setCount] = useState(7);
 	const [phase, setPhase] = useState(1); // 1=start positions, 2=relation input
+
+	useEffect(() => {
+		document.body.className = `phase-${phase}`;
+	}, [phase]);
 	const [selections, setSelections] = useState({});
 	const [startPositions, setStartPositions] = useState({});
 	const [currentPositions, setCurrentPositions] = useState({});
