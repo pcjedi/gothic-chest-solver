@@ -1,6 +1,11 @@
+html,
 body {
 	background: #1a1a2e;
 	color: #e0e0e0;
+	min-height: 100%;
+	margin: 0;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .app {
@@ -8,6 +13,8 @@ body {
 	margin: 2rem auto;
 	padding: 1rem;
 	font-family: sans-serif;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .nav-buttons {
@@ -56,6 +63,7 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 0.75rem;
+	width: 100%;
 }
 
 .row-action-btn {
@@ -109,6 +117,8 @@ body {
 	padding: 0.75rem 1rem;
 	border: 1px solid #444;
 	border-radius: 8px;
+	flex: 1;
+	min-width: 0;
 }
 
 .radio-group.tested {
@@ -180,6 +190,8 @@ body {
 .options {
 	display: flex;
 	gap: 1rem;
+	flex: 1;
+	justify-content: space-evenly;
 }
 
 .radio-label {
@@ -187,7 +199,7 @@ body {
 }
 
 .radio-label.edge input[type="radio"] {
-	outline: 2px solid #ff4444;
+	outline: 2px solid #ff6b6b;
 	outline-offset: 2px;
 }
 
@@ -198,13 +210,17 @@ body {
 }
 
 .radio-label.disabled {
-	opacity: 0.2;
+	opacity: 0.35;
 	pointer-events: none;
+}
+
+.radio-label.disabled input[type="radio"] {
+	accent-color: #555;
 }
 
 .radio-label.disabled input[type="radio"]:checked {
 	opacity: 1;
-	accent-color: #646cff;
+	accent-color: #a78bfa;
 	appearance: auto;
 }
 
@@ -297,4 +313,35 @@ body {
 	font-size: 0.9rem;
 	color: #e0e0e0;
 	white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+	.app {
+		padding: 0.5rem;
+		margin: 1rem auto;
+	}
+
+	.group-row {
+		gap: 0.4rem;
+	}
+
+	.radio-group {
+		gap: 0.4rem;
+		padding: 0.5rem 0.5rem;
+	}
+
+	.options {
+		gap: 0.25rem;
+	}
+
+	.radio-label input[type="radio"] {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	.row-action-btn {
+		width: 1.5rem;
+		height: 1.5rem;
+		font-size: 1rem;
+	}
 }
